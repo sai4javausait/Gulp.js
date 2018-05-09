@@ -12,3 +12,28 @@ gulp --help
 
 npm install gulp --save-dev
 
+#gulp basics
+
+var gulp = require('gulp');  //first step
+
+//gulp task creation
+
+gulp.task('task-name', function() {
+    //do something
+});
+
+//For running the task use 
+
+gulp task-name // in terminal
+
+// For Sass plugin use 
+
+npm install gulp-sass --save-dev
+
+// Creating Sass task in Gulp
+
+gulp.task('sass', function() {
+    return gulp.src('app/scss/styles.scss') //sass directory
+            .pipe(sass())
+            .pipe(gulp.dest('app/css')); // destination css directory
+});

@@ -37,3 +37,21 @@ gulp.task('sass', function() {
             .pipe(sass())
             .pipe(gulp.dest('app/css')); // destination css directory
 });
+
+# Watch task
+
+// named task 'scripts'
+gulp.task('scripts', function(){
+     // code 
+}); 
+ 
+// watch folder 'js' for all files ending in .js.  On change runs 'scripts' task
+gulp.task('watch', function(){
+     gulp.watch( 'app/js/**/*.js', ['scripts'] ); 
+});
+
+# Default task
+
+gulp.task( 'default', [‘scripts’, ‘watch’] );
+
+now just do "gulp"
